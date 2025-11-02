@@ -12,7 +12,7 @@ our data was lost when we restart the Application
     - Heap is a part of Ram (Ram is Volatile - Dynamic Allocation type memory)
     - So now, when we close the Application or Shutdown System then the data will be Completely Lost
     
-    ![image.png](../../../Images/2. %20JDBC/image.png)
+    ![image.png](../../Images/2.%20JDBC/image.png)
     
 - **After** Database Introduced
     - Now, we Store data with the help of Creating objects of a Class and Store that Objects in heap

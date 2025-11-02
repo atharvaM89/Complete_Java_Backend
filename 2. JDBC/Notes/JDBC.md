@@ -20,7 +20,7 @@ our data was lost when we restart the Application
     - System cannot able to load data directly form database (DB) it require RAM to Fetch the data
     - Some data Stored in table format, Some data Stored in JSON (MongoDB) Format, XML format
 
-![image.png](image%201.png)
+![image.png](../../Images/2.%20JDBC/image%201.png)
 
 Why Need of JSON
 
@@ -84,7 +84,7 @@ import java.sql.ResultSet;
 
 ## 4. Role of the JDBC Driver
 
-![image.png](image%202.png)
+![image.png](../../Images/2.%20JDBC/image%202.png)
 
 The **Driver** acts as a translator between Java and the specific database.
 

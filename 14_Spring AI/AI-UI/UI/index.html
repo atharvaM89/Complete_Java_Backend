@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chat with Gemini AI - Your intelligent conversation partner"
+    />
+    <title>Gemini AI Chat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-container">
+        <h2><i class="fas fa-robot"></i> Gemini v2.0</h2>
+      </div>
+      <button class="new-chat" onclick="startNewChat()">
+        <i class="fas fa-plus"></i> New Chat
+      </button>
+
+      <div class="history-container">
+        <h3><i class="fas fa-history"></i> Chat History</h3>
+        <ul class="chat-history" id="chat-history"></ul>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <div class="greeting-container">
+          <span class="greeting">Hello, </span>
+          <span
+            class="username"
+            contenteditable="true"
+            title="Click to edit your name"
+            >Ashvani</span
+          >
+          <i class="fas fa-edit edit-icon"></i>
+        </div>
+        <div class="status-indicator online">
+          <span class="status-dot"></span>
+          <span class="status-text">Gemini is online</span>
+        </div>
+      </div>
+
+      <div class="chat-box" id="chat-box">
+        <div class="welcome-message bot-message">
+          <h3>Welcome to Gemini AI Chat 👋</h3>
+          <p>I'm your AI assistant. How can I help you today?</p>
+          <div class="suggestion-chips">
+            <button class="suggestion-chip" onclick="suggestQuery(this)">
+              Get weather forecast
+            </button>
+            <button class="suggestion-chip" onclick="suggestQuery(this)">
+              Tell me a fun fact
+            </button>
+            <button class="suggestion-chip" onclick="suggestQuery(this)">
+              Run sentiment analysis
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <button class="feature-btn" id="attachment-btn" title="Attach file">
+          <i class="fas fa-paperclip"></i>
+        </button>
+        <button class="mic-btn" title="Voice input">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Ask Gemini..."
+          onkeypress="handleKeyPress(event)"
+          aria-label="Message input field"
+        />
+        <button class="feature-btn" id="emoji-btn" title="Insert emoji">
+          <i class="fas fa-smile"></i>
+        </button>
+        <button id="send-btn" onclick="sendMessage()" aria-label="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Set current date in the sidebar
+      document.getElementById("current-date").innerText =
+        new Date().toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+
+      // Theme toggle functionality
+      document
+        .querySelector(".theme-toggle")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("light-mode");
+          const themeIcon = document.getElementById("theme-icon");
+          if (document.body.classList.contains("light-mode")) {
+            themeIcon.className = "fas fa-sun";
+          } else {
+            themeIcon.className = "fas fa-moon";
+          }
+        });
+
+      // Suggestion chip functionality
+      function suggestQuery(chip) {
+        const query = chip.innerText;
+        document.getElementById("user-input").value = query;
+        sendMessage();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Anything AI | Spring AI + JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="container">
+      <h1><i class="fas fa-robot"></i> Ask Anything AI</h1>
+      <p class="subtitle">Powered by CodeForSuccess</p>
+
+      <div class="input-container">
+        <textarea
+          id="question"
+          placeholder="Ask me anything about technology, science, history, or any topic of interest..."
+          rows="4"
+        ></textarea>
+      </div>
+
+      <button id="askBtn"><i class="fas fa-paper-plane"></i> Ask AI</button>
+
+      <div class="loader" id="loader"></div>
+
+      <div id="responseBox">
+        <strong><i class="fas fa-brain"></i> AI Response:</strong>
+        <span id="answer">I'm ready to help with your questions!</span>
+      </div>
+
+      <div class="features-container">
+        <button class="feature-button" id="clearBtn">
+          <i class="fas fa-trash-alt"></i> Clear
+        </button>
+        <button class="feature-button" id="copyBtn">
+          <i class="fas fa-copy"></i> Copy Response
+        </button>
+        <button class="feature-button" id="sampleQuestionBtn">
+          <i class="fas fa-lightbulb"></i> Sample Question
+        </button>
+        <button class="feature-button" id="fullscreenBtn">
+          <i class="fas fa-expand"></i> Presentation Mode
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
